@@ -1,70 +1,150 @@
-# Getting Started with Create React App
+    # 🌱 GreenCommute
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **Type your route. See the true cost — in rupees, minutes, and CO₂ — of every way to get there.**
 
-## Available Scripts
+A climate-aware commuting app that compares 11 transport modes side-by-side by emissions, cost, and travel time.
 
-In the project directory, you can run:
+🔗 **GitHub:** https://github.com/EmaniSaketh/green-commute
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📋 Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure these are installed before you start:
 
-### `npm test`
+| Tool | Version | Download |
+|------|---------|----------|
+| Node.js | v16 or above | https://nodejs.org |
+| npm | Comes with Node | Included with Node.js |
+| Git | Any version | https://git-scm.com |
+| VS Code | Recommended | https://code.visualstudio.com |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Check if Node is installed:
+```bash
+node -v
+npm -v
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
+```bash
+cd Documents
+git clone https://github.com/EmaniSaketh/green-commute.git
+cd green-commute
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Install Dependencies
+```bash
+npm install
+```
+> ⏳ Takes 1–3 minutes. Wait for the cursor to return.
 
-### `npm run eject`
+If you get an error, try:
+```bash
+npm install --legacy-peer-deps
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Run the App
+```bash
+npm start
+```
+✅ Opens automatically at **http://localhost:3000**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If it doesn't open, go to http://localhost:3000 manually in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Fix: Merge Conflict Errors
 
-## Learn More
+If you see `<<<<<<< HEAD` in any file after cloning, run:
+```bash
+git fetch origin
+git reset --hard origin/master
+npm install
+npm start
+```
+> ⚠️ This will delete any local changes. Only run if the app fails to compile.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 Project Structure
 
-### Code Splitting
+```
+src/
+├── App.js                        Main app — connects all components
+├── components/
+│   ├── CommuteForm.js            Route input with city autocomplete
+│   ├── CommuteOptions.js         11 modes + Top 3 rankings
+│   ├── Recommendation.js         Smart practical suggestions
+│   ├── CarbonScore.js            Green score with mode selector
+│   ├── AIAdvisor.js              CO₂ impact advisor
+│   ├── Map.js                    Live map (origin → destination)
+│   ├── CarbonChart.js            Bar chart comparing all modes
+│   ├── SavingsCalculator.js      Monthly & yearly savings
+│   ├── CarbonStats.js            Stats summary
+│   └── ShareResults.js           Share your carbon stats
+└── utils/
+    ├── carbonCalculator.js       IPCC CO₂ emission factors
+    └── locationsData.js          1167 Indian cities dataset
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## ⚙️ Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Technology | Purpose |
+|-----------|---------|
+| React.js | Frontend UI and all components |
+| Chart.js | CO₂ comparison bar chart |
+| React-Leaflet | Interactive map |
+| IPCC Emission Factors | Scientific CO₂ data (kg/km per mode) |
+| 1167 Cities Dataset | Offline Indian cities with lat/lng |
+| Haversine Formula | Distance calculation between cities |
 
-### Making a Progressive Web App
+> 100% client-side · No API keys required · Works offline
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🚌 Supported Transport Modes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Mode | CO₂ (kg/km) |
+|------|------------|
+| Walking | 0.000 |
+| Bicycle | 0.000 |
+| E-Scooter | 0.022 |
+| Railways | 0.041 |
+| EV Car | 0.050 |
+| City Bus | 0.089 |
+| Petrol Bike | 0.103 |
+| Shared Cab | 0.130 |
+| CNG Car | 0.130 |
+| Diesel Car | 0.171 |
+| Petrol Car | 0.192 |
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🐛 Common Errors & Fixes
 
-### `npm run build` fails to minify
+| Error | Fix |
+|-------|-----|
+| `<<<<<<< HEAD` in any file | Run `git reset --hard origin/master` |
+| `Module not found` | Run `npm install` |
+| Port 3000 already in use | Run `npx kill-port 3000` then `npm start` |
+| `npm` not recognized | Install Node.js from nodejs.org and restart terminal |
+| Blank white page | Open browser console (F12) and check for errors |
+| Map not showing | Check internet connection — map uses OpenStreetMap |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 👨‍💻 Built By
+
+**Saketh Emani** — Hackathon Project · Sustainable Development Track
+
+---
+
+## 📄 License
+
+MIT

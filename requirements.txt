@@ -1,0 +1,21 @@
+# GreenCommute — Project Dependencies
+# Run: npm install (this file is for reference)
+
+# ── Core ──────────────────────────────
+react@18.2.0
+react-dom@18.2.0
+react-scripts@5.0.1
+
+# ── Map ───────────────────────────────
+react-leaflet@4.2.1
+leaflet@1.9.4
+
+# ── Charts ────────────────────────────
+chart.js@4.4.0
+react-chartjs-2@5.2.0
+
+# ── HTTP (if used) ────────────────────
+axios@1.6.0
+
+# ── Utilities ─────────────────────────
+web-vitals@2.1.4
